@@ -40,12 +40,13 @@ class AsyncDocker(AwaitLoader):
 
     @async_cached_property
     async def debian(self):
-        deb = await pywersl
+        pyw = await pywersl
+        deb: Distro = await pyw.distro
         return deb
 
     @async_cached_property
     async def version(self):
-        deb = await self.debian
+        deb: Distro = await self.debian
         ver_cmd = self.base_cmd + "--version"
         try:
             output = await deb.run(ver_cmd)
@@ -58,7 +59,6 @@ class AsyncDocker(AwaitLoader):
 
         except Exception as e:
             log.warning(f"Docker not ready: {e}. Installing Docker...")
-
             await deb.run(self.INSTALL_DOCKER)
             await deb.run(self.BOOT_DOCKER)
 

@@ -10,7 +10,7 @@ description = "Asynchronous Docker management for WSL2 using pywershell"
 readme = "README.md"
 license = { text = "MIT" }
 authors = [
-  { name = "Miles" }
+  { name = "genderlesspit" }
 ]
 dependencies = [
   "async_property>=1.0.0",
@@ -19,9 +19,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/dockwershell"
-Repository = "https://github.com/yourusername/dockwershell"
-License    = "https://opensource.org/licenses/MIT"
+Homepage = "https://github.com/genderlesspit/dockwershell"
 
 [tool.setuptools.package-data]
 "dockwershell" = ["pywershell.ps1"]
