@@ -39,9 +39,8 @@ class AsyncDocker(AwaitLoader):
     ]
 
     @async_cached_property
-    async def debian(self) -> pywersl.Distro:
-        cls: Pywersl = await Pywersl.get("Debian")
-        deb = await cls.distro
+    async def debian(self):
+        deb = await pywersl
         return deb
 
     @async_cached_property
